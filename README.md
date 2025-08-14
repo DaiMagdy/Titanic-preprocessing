@@ -1,9 +1,31 @@
-#Purpose and Scope
-This document provides a comprehensive overview of the Titanic-preprocessing repository, a Python-based data preprocessing system designed for machine learning workflows using the classic Titanic passenger dataset. The system implements two distinct processing approaches: a self-contained Jupyter notebook pipeline for complete end-to-end machine learning and a modular script-based system optimized for reusable preprocessing operations and comprehensive data exploration.
+# Titanic Preprocessing & ML Pipeline
 
-The repository serves both educational and production use cases, providing extensive data quality assessment, visualization generation, and flexible feature engineering capabilities. For detailed information about specific preprocessing functions, see Preprocessing Functions Module. For machine learning implementation details, see Jupyter Notebook Pipeline.
+## 🚀 Key Components and Data Flow
 
-#System Architecture
-The Titanic-preprocessing repository implements a dual-architecture approach that supports both interactive analysis and batch processing workflows. The system processes the raw titanic.csv dataset through comprehensive data quality pipelines, generating multiple output formats suitable for different downstream applications.
+The system's **modular design** centers around the `my_preprocessing.py` function library, which provides reusable preprocessing operations orchestrated by `main.py` for **batch processing** or imported directly for **interactive use**.
 
-![1](D:\Amit Diploma\AMIT\GitHub\Titanic preprocessing\Titanic-preprocessing\images\1.png)
+| 🧩 **Component**           | 🎯 **Purpose**                  | 🛠 **Key Functions**                              | 📦 **Output Artifacts**      |
+|----------------------------|---------------------------------|---------------------------------------------------|------------------------------|
+| 📄 `titanic.csv`           | Raw dataset                     | Data source                                       | 891 passenger records        |
+| ⚙️ `my_preprocessing.py`   | Function library                 | `read_data`, `check_types`, `visual`, `encode_columns` | Reusable preprocessing       |
+| 🖥 `main.py`                | Pipeline orchestrator            | Workflow coordination, logging                    | `output.txt`, `plots/`       |
+| 📓 `Titanic.ipynb`         | Complete ML pipeline             | End-to-end analysis                               | `submission.csv`             |
+
+---
+
+### 🔍 Data Quality and Transformation Pipeline
+This section covers **data validation**, **cleaning**, and **feature transformation** to ensure consistent, high-quality inputs for the ML model.
+
+---
+
+## 📊 Data Flow Diagram
+
+```mermaid
+flowchart LR
+    A[📄 titanic.csv<br>Raw Dataset] --> B[⚙️ my_preprocessing.py<br>Preprocessing Functions]
+    B --> C[🖥 main.py<br>Pipeline Orchestration]
+    C --> D[📊 Plots / 📜 output.txt]
+    C --> E[📓 Titanic.ipynb<br>ML Pipeline]
+    E --> F[📦 submission.csv<br>Final Output]
+```
+ص
